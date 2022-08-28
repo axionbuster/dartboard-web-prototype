@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <title>Dart Prototype</title>
+</head>
+
+<body>
+  <div id="app">
+    <nav id="player-nav">
+      <button type="button" disabled id="player-1" class="player-active">1</button>
+      <button type="button" disabled id="player-2">2</button>
+    </nav>
+    <div id="player-main">
+      <main id="score-parent">
+        <p id="score">501</p>
+      </main>
+    </div>
+    <div id="debug-panel" class="debug-show">
+      <p style="margin-right: 4px">Player:</p>
+      <button type="button" class="switch-player" id="switch-player-left">&larr;</button>
+      <button type="button" class="switch-player" id="switch-player-right">&rarr;</button>
+      <div class="vr"></div>
+      <p style="margin-right: 4px">Throw:</p>
+      <label for="debug-throw">
+        Index
+        <input type="number" name="debug-throw" id="debug-throw" min="1" max="20" value="20">
+      </label>
+      <label for="debug-multiplier">
+        Multiplier
+        <input type="number" name="debug-multiplier" id="debug-multiplier" min="1" max="3" value="3">
+      </label>
+      <button type="button" id="throw-regular">Throw Regular</button>
+      <button type="button" id="throw-be1">Throw Bullseye (25)</button>
+      <button type="button" id="throw-be2">Throw Bullseye (50)</button>
+      <button type="button" id="throw-miss">Miss A Shot</button>
+      <button type="button" id="refresh-page">Discard and Refresh</button>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

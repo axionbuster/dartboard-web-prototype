@@ -1,0 +1,80 @@
+:root {
+  background-color: darkblue;
+  font-size: 20px;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+:root * {
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#player-nav {
+  display: flex;
+}
+
+#player-nav button {
+  flex: 1 1 auto;
+  border: thick solid darkblue;
+  background-color: darkblue;
+  color: white;
+  font-size: 48px;
+}
+
+#player-nav button.player-active {
+  border-color: orange;
+}
+
+#player-main {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+#score-parent {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#score {
+  font-size: 200px;
+}
+
+#debug-panel {
+  display: hidden;
+
+  font-size: 16px;
+  line-height: 0;
+  gap: 4px;
+
+  align-items: center;
+
+  padding: 0 16px 0 16px;
+}
+
+#debug-panel.debug-show {
+  display: flex;
+  background-color: darkred;
+}
+
+.vr {
+  border-right: thin solid white;
+  margin-left: 4px;
+  margin-right: 4px;
+  height: 80%;
+
+  align-self: center;
+}
+
+#refresh-page {
+  justify-self: end;
+}
