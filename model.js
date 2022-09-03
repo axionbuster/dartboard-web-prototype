@@ -33,23 +33,36 @@ export let gameState = copyOriginalGameState()
 
 // Apply the model into the view
 export function applyModel() {
-  // #player-nav --> class != "player-active"
-  // #player-nav .nth-child(gameState.player) --> class="player-active"
-
+  // Designate the active player on top
   const playerToggles = document.querySelectorAll("#player-nav *")
   playerToggles[0].classList.remove("player-active")
   playerToggles[1].classList.remove("player-active")
   playerToggles[gameState.player].classList.add("player-active")
 
-  const player = gameState.players[gameState.player]
-
   // Apply player's model
-  // Currently, only score (no darts left)
-  // #score --> set inner text to player.score
+  const player = gameState.players[gameState.player]
   document.getElementById("score").innerText = player.score
+
+  // Those are the rocket symbols 🚀
+  // FYI, elements that are <span> but NOT .rocket
+  // are &nbsp; that prevent layout shifting when the
+  // rocket symbols 🚀 disappear.
+  // Set the number of rocket symbols 🚀 equal to
+  // the number of darts for that player.
+  const rockets = document.querySelectorAll('#darts-parent span.rocket')
+  for (const rocket of rockets) {
+    rocket.classList.remove('rocket-show')
+  }
+  for (let i = 0; i < player.darts; i++) {
+    rockets[i].classList.add('rocket-show')
+  }
 }
 
 // Reset and refresh the entire game
 export function resetModel() {
   gameState = copyOriginalGameState()
+
+  // This call is apparently not necessary, but
+  // it can't hurt.
+  applyModel()
 }
