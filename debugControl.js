@@ -1,7 +1,7 @@
 import { gameState } from './model'
 
-// wrapInc1(0) = 1
-// wrapInc1(1) = 0
+// alternate(0) = 1
+// alternate(1) = 0
 function alternate(n) {
   return (n + 1) % 2
 }
